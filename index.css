@@ -1,0 +1,379 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   🔮 AI Palm Reader – Global Styles
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Core Colors */
+  --bg-primary: #0f0a2e;
+  --bg-secondary: #1a1145;
+  --bg-tertiary: #251760;
+
+  /* Gradients */
+  --gradient-cosmic: linear-gradient(135deg, #0f0a2e 0%, #1a1145 30%, #2d1b69 60%, #1a1145 100%);
+  --gradient-card: linear-gradient(135deg, rgba(45, 27, 105, 0.4) 0%, rgba(26, 17, 69, 0.6) 100%);
+  --gradient-accent: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --gradient-button: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-glow: linear-gradient(135deg, #00d2ff 0%, #7b2ff7 50%, #c471f5 100%);
+  --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --text-muted: rgba(255, 255, 255, 0.35);
+
+  /* Accent Colors */
+  --accent-cyan: #00d2ff;
+  --accent-blue: #667eea;
+  --accent-purple: #764ba2;
+  --accent-violet: #c471f5;
+  --accent-pink: #f093fb;
+  --accent-warm: #f5576c;
+  --accent-gold: #ffd700;
+  --accent-green: #00e676;
+
+  /* Glow Colors */
+  --glow-cyan: rgba(0, 210, 255, 0.3);
+  --glow-purple: rgba(118, 75, 162, 0.3);
+  --glow-blue: rgba(102, 126, 234, 0.3);
+  --glow-pink: rgba(240, 147, 251, 0.2);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-hover: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.2);
+  --glass-blur: 16px;
+  --glass-blur-heavy: 24px;
+
+  /* Borders & Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow-cyan: 0 0 20px rgba(0, 210, 255, 0.2), 0 0 40px rgba(0, 210, 255, 0.1);
+  --shadow-glow-purple: 0 0 20px rgba(118, 75, 162, 0.3), 0 0 40px rgba(118, 75, 162, 0.15);
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cinzel', Georgia, serif;
+
+  --fs-xs: 0.7rem;
+  --fs-sm: 0.8rem;
+  --fs-base: 0.95rem;
+  --fs-md: 1.05rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.85rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 2.75rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-Index */
+  --z-base: 1;
+  --z-card: 10;
+  --z-header: 100;
+  --z-nav: 100;
+  --z-modal: 500;
+  --z-snackbar: 600;
+  --z-overlay: 900;
+  --z-top: 1000;
+
+  /* Safe Areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Layout */
+  --header-height: 56px;
+  --bottom-nav-height: 64px;
+  --max-width: 480px;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.display-font {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-violet);
+}
+
+/* ── Inputs ── */
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  width: 100%;
+  outline: none;
+  transition: all var(--transition-normal);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+  background: var(--glass-bg-hover);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Buttons Reset ── */
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ── Images ── */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-user-drag: none;
+}
+
+/* ── Lists ── */
+ul, ol {
+  list-style: none;
+}
+
+/* ── Utility Classes ── */
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--gradient-cosmic);
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
+.screen-with-header {
+  padding-top: calc(var(--header-height) + var(--safe-top));
+}
+
+.screen-with-nav {
+  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 8px);
+}
+
+.screen-content {
+  flex: 1;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gradient {
+  background: var(--gradient-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow-purple);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+
+.w-full { width: 100%; }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+
+/* ── Accessibility ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Safe Area Padding ── */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ── No text selection on interactive elements ── */
+button, a, .no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ── Touch optimizations ── */
+@media (hover: none) and (pointer: coarse) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+  }
