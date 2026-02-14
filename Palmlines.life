@@ -1,0 +1,34 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   🔮 AI Palm Reader – Palm Lines Data
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+export const palmLines = [
+  {
+    id: "heart",
+    nameKey: "lines.heart",
+    description: "Represents emotional stability, romantic perspectives, depression, and cardiac health.",
+    icon: "❤️",
+    color: "#ff6b6b"
+  },
+  {
+    id: "head",
+    nameKey: "lines.head",
+    description: "Represents learning style, communication style, intellectualism, and thirst for knowledge.",
+    icon: "🧠",
+    color: "#4ecdc4"
+  },
+  {
+    id: "life",
+    nameKey: "lines.life",
+    description: "Reflects physical vitality, general well-being, and major life changes.",
+    icon: "🌱",
+    color: "#ffe66d"
+  },
+  {
+    id: "fate",
+    nameKey: "lines.fate",
+    description: "Indicates the degree to which a person's life is affected by external circumstances.",
+    icon: "✨",
+    color: "#a29bfe"
+  }
+];
